@@ -3,17 +3,21 @@ using TMPro;
 
 public class Controller : MonoBehaviour
 {
-    public TMP_Text currencyText;
+    public Data data;
 
-    public double currency;
+    [SerializeField] private TMP_Text currencyText;
 
-    public void Update()
+    private void Start()
     {
-        currencyText.text = currency + "Currency";
+        data = new Data();
+    }
+    private void Update()
+    {
+        currencyText.text = data.currency + " CURRENCY";
     }
 
     public void GenerateCurrency()
     {
-        currency += 1;
+        data.currency += 1;
     }
 }
